@@ -1,0 +1,288 @@
+/*
+  Palette du TD :
+  bleu clair #6ec7ea, bleu gris #51b1ce, gris clair #e6e6e6,
+  rose #ff4370, magenta #e52e62, noir #000000.
+  Le blanc des champs sert juste à les distinguer du fond gris.
+*/
+
+:root {
+  --blue: #6ec7ea;
+  --blue-gray: #51b1ce;
+  --gray: #e6e6e6;
+  --pink: #ff4370;
+  --magenta: #e52e62;
+  --black: #000000;
+  --white: #ffffff;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.45;
+  color: var(--black);
+  background: var(--gray);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--blue-gray);
+}
+
+a:hover {
+  color: var(--magenta);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--blue-gray);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.brand img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.feed-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.reply-form {
+  margin: 0.75rem 0 0.25rem;
+}
+
+.composer,
+.filter input,
+.feed-tools select,
+.image-fields input {
+  width: 100%;
+}
+
+.composer textarea,
+.filter input,
+.feed-tools select,
+.image-fields input {
+  width: 100%;
+  border: 1px solid var(--blue-gray);
+  border-radius: 0.4rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--white);
+  color: var(--black);
+}
+
+.composer textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.checkbox,
+.image-fields label {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.image-fields label {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.composer-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.6rem;
+}
+
+.remaining,
+.hint,
+.feed-count,
+.empty-replies {
+  margin: 0.4rem 0;
+}
+
+.remaining.over,
+.form-error {
+  color: var(--magenta);
+}
+
+.composer button,
+.like-button {
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+}
+
+.composer button {
+  background: var(--blue);
+  color: var(--black);
+  border: 1px solid var(--blue-gray);
+}
+
+.composer button:disabled {
+  background: var(--gray);
+  color: var(--black);
+  cursor: not-allowed;
+}
+
+.filter {
+  display: block;
+  margin-top: 1rem;
+}
+
+.feed-count {
+  font-weight: 600;
+}
+
+.tweet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tweet {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--blue-gray);
+}
+
+.avatar {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.tweet-meta {
+  margin: 0 0 0.35rem;
+}
+
+.tweet-meta a {
+  font-weight: 700;
+}
+
+.tweet-meta span,
+.tweet-meta time {
+  color: var(--blue-gray);
+}
+
+.tweet-content {
+  margin: 0.4rem 0;
+  white-space: pre-wrap;
+}
+
+.tweet-image {
+  display: block;
+  max-width: 100%;
+  max-height: 20rem;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.tweet-image-link {
+  display: block;
+  margin: 0.4rem 0;
+}
+
+.text-button,
+.like-button {
+  display: inline-block;
+  margin-right: 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--blue-gray);
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.like-button {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.like-button.liked {
+  color: var(--magenta);
+  border-color: var(--pink);
+  text-decoration: none;
+}
+
+.tweet-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.breadcrumb {
+  margin-bottom: 0.5rem;
+}
+
+.about h1,
+main h1 {
+  font-size: 1.4rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 2px;
+}
